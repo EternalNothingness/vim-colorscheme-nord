@@ -50,7 +50,8 @@ let s:nord15_term = "5"
 let s:nord16_term = s:nord9_term
 "+--- only works for terminals that are "256 colors ready"!!! ---+
 "https://stackoverflow.com/questions/16014361/how-to-set-a-custom-color-to-folded-highlighting-in-vimrc-for-use-with-putty#16014807 ---+
-if stridx($TERM, "256color") " checks whether $TERM contains the string "256color"
+"+-- stridx checks whether $TERM contains the string "256color": https://vi.stackexchange.com/questions/19651/how-to-check-if-a-string-is-a-substring-of-another-string#19652 ---+
+if stridx($TERM, "256color") 
     let s:nord16_term = "25"
 endif
 
