@@ -47,7 +47,7 @@ let s:nord13_term = "3"
 let s:nord14_term = "2"
 let s:nord15_term = "5"
 "+--- custom addition for a darker blue ---+
-let s:nord16_term = s:nord4_term
+let s:nord16_term = s:nord9_term
 "+--- only works for terminals that are "256 colors ready"!!! ---+
 "https://stackoverflow.com/questions/16014361/how-to-set-a-custom-color-to-folded-highlighting-in-vimrc-for-use-with-putty#16014807 ---+
 if stridx($TERM, "256color") " checks whether $TERM contains the string "256color"
