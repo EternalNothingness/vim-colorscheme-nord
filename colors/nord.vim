@@ -46,6 +46,13 @@ let s:nord12_term = "11"
 let s:nord13_term = "3"
 let s:nord14_term = "2"
 let s:nord15_term = "5"
+"+--- custom addition for a darker blue ---+
+let s:nord16_term = s:nord4_term
+"+--- only works for terminals that are "256 colors ready"!!! ---+
+"https://stackoverflow.com/questions/16014361/how-to-set-a-custom-color-to-folded-highlighting-in-vimrc-for-use-with-putty#16014807 ---+
+if stridx($TERM, "256color") " checks whether $TERM contains the string "256color"
+    let s:nord16_term = "25"
+endif
 
 let s:nord3_gui_brightened = [
   \ s:nord3_gui,
@@ -150,12 +157,8 @@ call s:hi("SpellBad", s:nord11_gui, s:nord0_gui, s:nord11_term, "NONE", "undercu
 call s:hi("SpellCap", s:nord13_gui, s:nord0_gui, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
 call s:hi("SpellLocal", s:nord5_gui, s:nord0_gui, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
 call s:hi("SpellRare", s:nord6_gui, s:nord0_gui, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
-" Highlighting selected code is currently bugged, use colors for highlighted
-" search results instead
-"+--- call s:hi("Visual", "", s:nord3_gui, "", s:nord1_term, "", "") ---+
-call s:hi("Visual", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "NONE"  , "")
-" --- call s:hi("VisualNOS", "", s:nord3_gui, "", s:nord1_term, "", "") --+
-call s:hi("VisualNOS", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "NONE"  , "")
+call s:hi("Visual", s:nord13_gui, s:nord9_gui, s:nord13_term, s:nord16_term, "NONE"  , "")
+call s:hi("VisualNOS", s:nord13_gui, s:nord9_gui, s:nord13_term, s:nord16_term, "NONE"  , "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
@@ -241,7 +244,8 @@ call s:hi("WarningMsg", s:nord0_gui, s:nord13_gui, s:nord1_term, s:nord13_term, 
 call s:hi("WildMenu", s:nord8_gui, s:nord1_gui, s:nord8_term, s:nord1_term, "", "")
 
 "+--- Search ---+
-call s:hi("IncSearch", s:nord6_gui, s:nord10_gui, s:nord6_term, s:nord10_term, s:underline, "")
+"--- call s:hi("IncSearch", s:nord6_gui, s:nord10_gui, s:nord6_term, s:nord10_term, s:underline, "") ---+
+call s:hi("IncSearch", s:nord3_gui, s:nord13_gui, s:nord3_term, s:nord13_term, s:underline, "")
 "+--- call s:hi("Search", s:nord11_gui, s:nord8_gui, s:nord11_term, s:nord8_term, "NONE", "") ---+
 call s:hi("Search", s:nord13_gui, s:nord3_gui, s:nord13_term, s:nord3_term, "NONE", "")
 
