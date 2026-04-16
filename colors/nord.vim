@@ -1,5 +1,8 @@
 " Copyright (c) 2016-present Sven Greb <development@svengreb.de>
 " This source code is licensed under the MIT license found in the license file.
+"
+" color scheme syntax tutorial: https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax/
+" vim help page: https://vimdoc.sourceforge.net/htmldoc/syntax.html
 
 if version > 580
   hi clear
@@ -128,6 +131,7 @@ call s:hi("Italic", "", "", "", "", s:italic, "")
 call s:hi("Underline", "", "", "", "", s:underline, "")
 
 "+--- Editor ---+
+"+--- args: group, guifg, guibg, ctermfg, ctermbg, attr, guisp ---+
 call s:hi("ColorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
 call s:hi("Cursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
@@ -238,7 +242,8 @@ call s:hi("WildMenu", s:nord8_gui, s:nord1_gui, s:nord8_term, s:nord1_term, "", 
 
 "+--- Search ---+
 call s:hi("IncSearch", s:nord6_gui, s:nord10_gui, s:nord6_term, s:nord10_term, s:underline, "")
-call s:hi("Search", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "NONE", "")
+"+--- call s:hi("Search", s:nord11_gui, s:nord8_gui, s:nord11_term, s:nord8_term, "NONE", "") ---+
+call s:hi("Search", s:nord13_gui, s:nord3_gui, s:nord13_term, s:nord3_term, "NONE", "")
 
 "+--- Tabs ---+
 call s:hi("TabLine", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
